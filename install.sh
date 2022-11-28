@@ -1,2 +1,2 @@
 #!/bin/bash
-ls ~/dotfiles
+ln ~/dotfiles/.bashrc ~/.bashrc
