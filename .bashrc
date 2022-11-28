@@ -57,7 +57,20 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    if [ -e /usr/lib/git-core/git-sh-prompt ]; then
+        source /usr/lib/git-core/git-sh-prompt
+        # unstaged (*), staged (+)
+        GIT_PS1_SHOWDIRTYSTATE=1
+        # stashed ($)
+        GIT_PS1_SHOWSTASHSTATE=1
+        # untracked (%)
+        GIT_PS1_SHOWUNTRACKEDFILES=1
+        # behind (<), ahead (>), diverged (<>), no difference (=)
+        GIT_PS1_SHOWUPSTREAM="auto"
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;31m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
+    else
+        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    fi
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
