@@ -1,5 +1,5 @@
 #!/bin/bash
-ln -sb ~/dotfiles/.bashrc ~/.bashrc
-ln -sb ~/dotfiles/.inputrc ~/.inputrc
-ln -sb ~/dotfiles/.zsh_aliases ~/.zsh_aliases
-ln -sb ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/.bashrc ~/.bashrc
+ln -sf ~/dotfiles/.inputrc ~/.inputrc
+ln -sf ~/dotfiles/.zsh_aliases ~/.zsh_aliases
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
