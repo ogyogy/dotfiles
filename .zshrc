@@ -56,7 +56,7 @@ GIT_PS1_SHOWUPSTREAM="auto"
 # プロンプト文字列での変数展開を有効化
 setopt PROMPT_SUBST
 # プロンプトの表示内容を定義
-PROMPT="%F{green}%n@%m%f:%F{blue}%d%f%F{cyan}$(__git_ps1 " (%s)")%f%# "
+PROMPT="%F{green}%n@%m%f:%F{blue}%~%f%F{cyan}$(__git_ps1 " (%s)")%f%# "
 
 ##########
 # Alias definitions
