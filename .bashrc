@@ -128,3 +128,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# AWS CLI v2 completion
+if [ -e /usr/local/bin/aws_completer ]; then
+    complete -C '/usr/local/bin/aws_completer' aws
+    complete -C '/usr/local/bin/aws_completer' awslocal
+fi

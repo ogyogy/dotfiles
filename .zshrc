@@ -9,11 +9,17 @@ setopt AUTO_PUSHD
 ##########
 # Completion
 ##########
-# 補完を有効化
-autoload -U compinit
-compinit
+# Bashの補完を有効化
+autoload -U bashcompinit && bashcompinit
+# Zshの補完を有効化
+autoload -Uz compinit && compinit
 # 補完リストを小さく表示
 setopt LIST_PACKED
+# AWS CLI v2の補完を有効化
+if [ -e /usr/local/bin/aws_completer ]; then
+    complete -C '/usr/local/bin/aws_completer' aws
+    complete -C '/usr/local/bin/aws_completer' awslocal
+fi
 
 ##########
 # History
