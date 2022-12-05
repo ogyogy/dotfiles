@@ -20,6 +20,8 @@ if [ -e /usr/local/bin/aws_completer ]; then
     complete -C '/usr/local/bin/aws_completer' aws
     complete -C '/usr/local/bin/aws_completer' awslocal
 fi
+# --prefix=以降の補完を有効化
+setopt MAGIC_EQUAL_SUBST
 
 ##########
 # History
