@@ -134,3 +134,8 @@ if [ -e /usr/local/bin/aws_completer ]; then
     complete -C '/usr/local/bin/aws_completer' aws
     complete -C '/usr/local/bin/aws_completer' awslocal
 fi
+
+# Tab Completion for npm
+if type npm > /dev/null 2>&1; then
+    source <(npm completion)
+fi
