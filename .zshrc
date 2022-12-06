@@ -38,6 +38,8 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 # 履歴リストに追加されるコマンドから余分な空白を削除
 setopt HIST_REDUCE_BLANKS
+# 履歴を直接実行しない
+setopt HIST_VERIFY
 # 入力したコマンドを履歴ファイルに追加
 setopt SHARE_HISTORY
 
