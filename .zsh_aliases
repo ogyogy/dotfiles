@@ -23,6 +23,7 @@ alias l='ls -CF'
 alias cp='nocorrect cp'
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
+alias touch='nocorrect touch'
 
 # prompt before run
 alias cp='cp -i'
